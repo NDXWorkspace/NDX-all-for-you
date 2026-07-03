@@ -19,6 +19,31 @@
   }
 })();
 
+/* ── Background music — auto-play on first user interaction ── */
+(function setupBackgroundMusic() {
+  const audio = document.getElementById('bg-song');
+  if (!audio) return;
+
+  audio.volume = 0.6; // atur volume default (0 - 1)
+
+  let started = false;
+
+  function tryPlay() {
+    if (started) return;
+    audio.play()
+      .then(() => { started = true; })
+      .catch(() => { /* Browser masih block, akan dicoba lagi di interaksi berikutnya */ });
+  }
+
+  // Coba langsung (kalau browser mengizinkan)
+  tryPlay();
+
+  // Fallback: mainkan begitu ada interaksi pertama dari user
+  ['click', 'touchstart', 'keydown'].forEach(evt => {
+    document.addEventListener(evt, tryPlay, { once: true });
+  });
+})();
+
 /* ── NO button — runs away from the cursor, stays inside viewport ── */
 (function setupNoButton() {
   const btn = document.getElementById('btn-no');
