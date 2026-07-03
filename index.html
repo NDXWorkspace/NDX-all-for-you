@@ -14,14 +14,12 @@
     <div class="card">
       <div class="emoji-top">🌸</div>
       <h1 class="question">Do You<br /><em>Love Me?</em><br /> Kirana💕?</h1>
-
       <div class="media-slot" id="media-main">
         <video autoplay loop muted playsinline>
           <source src="video2.mp4" type="video/mp4" />
         </video>
         <span class="placeholder-text">🎞️ Video gagal dimuat</span>
       </div>
-
       <div class="buttons">
         <button id="btn-yes" onclick="showYesPage()">YES 💖</button>
         <button id="btn-no">NO 😢</button>
@@ -36,17 +34,18 @@
       <div class="emoji-top">🎉</div>
       <h1 class="yes-title">Yay! I knew it! My💕</h1>
       <p class="yes-subtitle">You just made me the happiest person in the world 🌍✨</p>
-
       <div class="media-slot" id="media-yes">
         <video autoplay loop muted playsinline>
           <source src="video1.mp4" type="video/mp4" />
         </video>
         <span class="placeholder-text">🎞️ Video gagal dimuat</span>
       </div>
-
       <button class="btn-back" onclick="goBack()">← Kembali</button>
     </div>
   </div>
+
+  <!-- ====== BACKGROUND MUSIC ====== -->
+  <audio id="bg-song" src="song.mp3" loop preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
